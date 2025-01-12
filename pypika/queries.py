@@ -1272,13 +1272,13 @@ class QueryBuilder(Selectable, Term):
 
             querystring += self._update_sql(**kwargs)
 
-            if self._joins:
-                querystring += " " + " ".join(join.get_sql(**kwargs) for join in self._joins)
-
             querystring += self._set_sql(**kwargs)
 
             if self._from:
                 querystring += self._from_sql(**kwargs)
+
+            if self._joins:
+                querystring += " " + " ".join(join.get_sql(**kwargs) for join in self._joins)
 
             if self._wheres:
                 querystring += self._where_sql(**kwargs)
