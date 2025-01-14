@@ -150,6 +150,7 @@ class JSONOperators(Enum):
     CONTAINS = "@>"
     CONTAINED_BY = "<@"
     HAS_KEYS = "?&"
+    JOIN_JSONB_VALUE = "||"
     HAS_ANY_KEYS = "?|"
     GET_JSON_VALUE = "->"
     GET_TEXT_VALUE = "->>"
