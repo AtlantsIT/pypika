@@ -558,6 +558,9 @@ class JSON(Term):
     def has_any_keys(self, other: Iterable) -> "BasicCriterion":
         return BasicCriterion(JSONOperators.HAS_ANY_KEYS, self, Array(*other))
 
+    def join_jsonb(self, expr: dict) -> "BasicCriterion":
+        return BasicCriterion(JSONOperators.JOIN_JSONB_VALUE, self, self.wrap_json(expr))
+
 
 class Values(Term):
     def __init__(self, field: Union[str, "Field"]) -> None:
